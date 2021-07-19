@@ -1,0 +1,23 @@
+// Place all the styles related to the search controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+/* header */
+header{
+  background-color: #f0fff0;
+  margin-top:0px;
+}
+
+header h1{
+  text-align: center;
+}
+
+header input[name="term"]{
+  display:block;
+  border: solid;
+  margin:0px auto;
+}
+header input[type="submit"]{
+  display:block;
+  margin:30px auto;
+}

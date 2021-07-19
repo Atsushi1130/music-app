@@ -11,6 +11,14 @@
   </head>
 
   <body>
+    <header>
+      <h1>検索したいアーティストを入力してください</h1>
+      <%= form_tag("/search") do %>
+        <input name = "term">
+        <input type="submit">
+      <% end %>
+    </header>
+
     <%= yield %>
   </body>
 </html>
