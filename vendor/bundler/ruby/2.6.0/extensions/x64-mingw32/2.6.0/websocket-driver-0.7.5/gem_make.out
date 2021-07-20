@@ -1,0 +1,16 @@
+current directory: C:/Users/UshidaAtsushi/Documents/rails-music-app/vendor/bundler/ruby/2.6.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+C:/Ruby26-x64/bin/ruby.exe -I C:/Ruby26-x64/lib/ruby/2.6.0 -r ./siteconf20210720-3740-1hgb8ie.rb extconf.rb
+creating Makefile
+
+current directory: C:/Users/UshidaAtsushi/Documents/rails-music-app/vendor/bundler/ruby/2.6.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: C:/Users/UshidaAtsushi/Documents/rails-music-app/vendor/bundler/ruby/2.6.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make "DESTDIR="
+generating websocket_mask-x64-mingw32.def
+compiling websocket_mask.c
+linking shared-object websocket_mask.so
+
+current directory: C:/Users/UshidaAtsushi/Documents/rails-music-app/vendor/bundler/ruby/2.6.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20210720-3740-1a9lrto

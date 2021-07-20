@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  trackId: 1
+  artistName: MyText
+  collectionName: MyText
+  trackName: MyText
+
+two:
+  trackId: 1
+  artistName: MyText
+  collectionName: MyText
+  trackName: MyText

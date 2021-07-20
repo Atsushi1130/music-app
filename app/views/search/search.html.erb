@@ -1,4 +1,5 @@
-<% @searchs.each do |track| %>
-       <iframe allow="autoplay *; encrypted-media *; fullscreen *" frameborder="0" height="150" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/jp/album/%E7%82%8E/<%= track['collectionId'] %>?i=<%= track['trackId'] %>"></iframe>
-
+<% @pages.each do |track| %>
+  <iframe allow="autoplay *; encrypted-media *; fullscreen *" frameborder="0" height="150" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/jp/album/%E7%82%8E/<%= track['collectionId'] %>?i=<%= track['trackId'] %>"></iframe>
+  <%= link_to("お気に入り","/search/#{track["trackId"]}/#{track["collectionId"]}/#{track["artistName"]}/#{track["collectionName"]}/#{track["trackName"]}",{method:"post"}) %>
 <% end %>
+<%= paginate @pages %>

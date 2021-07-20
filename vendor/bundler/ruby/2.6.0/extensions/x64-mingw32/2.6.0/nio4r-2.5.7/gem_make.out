@@ -1,0 +1,14 @@
+current directory: C:/Users/UshidaAtsushi/Documents/rails-music-app/vendor/bundler/ruby/2.6.0/gems/nio4r-2.5.7/ext/nio4r
+C:/Ruby26-x64/bin/ruby.exe -I C:/Ruby26-x64/lib/ruby/2.6.0 -r ./siteconf20210720-3740-dk7smj.rb extconf.rb
+
+current directory: C:/Users/UshidaAtsushi/Documents/rails-music-app/vendor/bundler/ruby/2.6.0/gems/nio4r-2.5.7/ext/nio4r
+make "DESTDIR=" clean
+make: *** ターゲット 'clean' を make するルールがありません.  中止.
+
+current directory: C:/Users/UshidaAtsushi/Documents/rails-music-app/vendor/bundler/ruby/2.6.0/gems/nio4r-2.5.7/ext/nio4r
+make "DESTDIR="
+make: 'all' に対して行うべき事はありません.
+
+current directory: C:/Users/UshidaAtsushi/Documents/rails-music-app/vendor/bundler/ruby/2.6.0/gems/nio4r-2.5.7/ext/nio4r
+make "DESTDIR=" install
+make: 'install' に対して行うべき事はありません.

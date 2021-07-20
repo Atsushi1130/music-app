@@ -12,8 +12,8 @@
 
   <body>
     <header>
-      <h1>検索したいアーティストを入力してください</h1>
-      <%= form_tag("/search") do %>
+      <h1>検索したい曲名・アーティストを入力してください</h1>
+      <%= form_tag("/search",:method => 'get') do %>
         <input name = "term">
         <input type="submit">
       <% end %>
