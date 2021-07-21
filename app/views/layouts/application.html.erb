@@ -5,17 +5,35 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <header>
+      <div class="flashNotice">
+        <% if flash[:notice] %>
+          <%= flash[:notice] %>
+        <% end %>
+      </div>
       <h1>検索したい曲名・アーティストを入力してください</h1>
-      <%= form_tag("/search",:method => 'get') do %>
-        <input name = "term">
-        <input type="submit">
+      <div class="search_container">
+        <%= form_tag("/search",:method => 'get') do %>
+          <input name = "term" type="text" size="25" placeholder="キーワード検索">
+          <input type="submit" value='&#xf002'>
+        <% end %>
+    </div>
+      <%= link_to("テストページへ","/test") %>
+      <%= link_to("initページへ","/") %>
+      <% if @current_user %>
+        <%= link_to("お気に入り一覧へ","/user/#{@current_user.id}/show") %>
+        <%= link_to("登録情報の編集","/user/#{@current_user.id}/edit") %>
+        <%= link_to("ログアウト","/logout",{method: "post"}) %>
+        <p>ログイン中のユーザ：<%= @current_user.name %></p>
+      <% else %>
+        <%= link_to("アカウント作成","/signup") %>
+        <%= link_to("ログイン","/login_form") %>
       <% end %>
     </header>
 

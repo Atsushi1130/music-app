@@ -13,3 +13,51 @@
  *= require_tree .
  *= require_self
  */
+
+ /* application.html.erb */
+.flashNotice{
+  text-align: center;
+  background-color: orange;
+}
+
+.search_container{
+  background-color: white;
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid #999;
+  display: block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  height: 2.3em;
+  width: 260px;
+  margin: 0px auto;
+  margin-bottom: 20px;
+}
+.search_container input[type="text"]{
+  border: none;
+  position: relative;
+  height: 2.0em;
+}
+.search_container input[type="text"]:focus {
+  outline: 0;
+}
+.search_container input[type="submit"]{
+  cursor: pointer;
+  font-family: FontAwesome;
+  border: none;
+  border-radius: 20%;
+  background: #3879D9;
+  color: #fff;
+  outline : none;
+  width: 2.0em;
+  height: 2.0em;
+}
+
+header{
+  background-color: #f0fff0;
+  margin-top:0px;
+}
+
+header h1{
+  text-align: center;
+}
