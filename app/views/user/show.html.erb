@@ -1,9 +1,23 @@
-<h2>お気に入り楽曲</h2>
-<% @countArtist.each do |artist| %>
-  <h3><%= artist.artistName %></h3>
-  <% @artistsAndSongs[artist.artistName].each do |song| %>
-    <iframe allow="autoplay *; encrypted-media *; fullscreen *" frameborder="0" height="150" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/jp/album/%E7%82%8E/<%= song.collectionId %>?i=<%= song.trackId %>"></iframe>
-    <%= link_to("削除","/search/#{song.trackId}/delete") %>
-    <br>
+<div class="show_h1">
+  <h1>お気に入り楽曲</h1>
+</div>
+<div class="accordion_one">
+  <% @countArtist.each do |artist| %>
+    <div class="accordion_header">
+      <h3><%= artist.artistName %></h3>
+      <div class="i_box"><i class="one_i"></i></div>
+    </div>
+    <div class="accordion_inner">
+      <div class="box_one">
+        <% @artistsAndSongs[artist.artistName].each do |song| %>
+          <div class="relative">
+            <iframe class="txt_a_ac" allow="autoplay *; encrypted-media *; fullscreen *" frameborder="0" height="150" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/jp/album/%E7%82%8E/<%= song.collectionId %>?i=<%= song.trackId %>"></iframe>
+            <div class="function_button">
+              <%= link_to("削除","/search/#{song.trackId}/delete",{class: "button"}) %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
   <% end %>
-<% end %>
+</div>

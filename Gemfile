@@ -27,6 +27,7 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'httparty'
 gem 'kaminari'
+gem 'jquery-rails'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false

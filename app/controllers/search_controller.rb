@@ -1,6 +1,8 @@
 require 'itunes-search-api'
 
 class SearchController < ApplicationController
+  before_action :authenticate_user,{only:[:new,:delete]}
+
   def test
     @favoSong = Song.all
     @countArtist = Song.select(:artistName).distinct

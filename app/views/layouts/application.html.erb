@@ -25,8 +25,8 @@
         <% end %>
     </div>
       <%= link_to("テストページへ","/test") %>
-      <%= link_to("initページへ","/") %>
       <% if @current_user %>
+        <%= link_to("#{@current_user.name}さんへのおすすめ","/") %>
         <%= link_to("お気に入り一覧へ","/user/#{@current_user.id}/show") %>
         <%= link_to("登録情報の編集","/user/#{@current_user.id}/edit") %>
         <%= link_to("ログアウト","/logout",{method: "post"}) %>

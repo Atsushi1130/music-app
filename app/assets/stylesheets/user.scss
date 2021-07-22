@@ -1,3 +1,146 @@
 // Place all the styles related to the user controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+/* show.html.erb */
+.show_h1{
+  text-align: center;
+}
+
+.function_button{
+  position: absolute;
+  top: 50%;
+  left: 80%;
+}
+.relative{
+  position: relative;
+  margin: 0;
+  display: inline-block;
+}
+.button{
+  background-color: #db0f2f;
+  color: #fff;
+  padding: 1px 30%;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none;
+  box-shadow:0px 3px black;
+  transition-duration: 0.2s;
+  border-radius: 20px;
+}
+.button:hover{
+  opacity: 0.8;
+}
+.button:active{
+  box-shadow: none;
+  position: relative;
+  top: 3px;
+}
+
+.accordion_header{
+  border: solid;
+}
+.accordion_one .accordion_header {
+  background-color: #db0f2f;
+  color: #fff;
+  font-size: 26px;
+  font-weight: bold;
+  padding: 20px 11%;
+  text-align: center;
+  position: relative;
+  z-index: +1;
+  cursor: pointer;
+  transition-duration: 0.2s;
+}
+.accordion_one .accordion_header:hover {
+  opacity: .8;
+}
+.accordion_one .accordion_header .i_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #fff;
+  margin-top: -20px;
+  box-sizing: border-box;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  transform-origin: center center;
+  transition-duration: 0.2s;
+}
+.accordion_one .accordion_header .i_box .one_i {
+  display: block;
+  width: 18px;
+  height: 18px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  transform-origin: center center;
+  transition-duration: 0.2s;
+  position: relative;
+}
+.accordion_one .accordion_header.open .i_box {
+  -webkit-transform: rotate(-360deg);
+  transform: rotate(-360deg);
+}
+.accordion_one .accordion_header .i_box .one_i:before, .accordion_one .accordion_header .i_box .one_i:after {
+  display: flex;
+  content: '';
+  background-color: #fff;
+  border-radius: 10px;
+  width: 18px;
+  height: 4px;
+  position: absolute;
+  top: 7px;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  transform-origin: center center;
+}
+.accordion_one .accordion_header .i_box .one_i:before {
+  width: 4px;
+  height: 18px;
+  top: 0;
+  left: 7px;
+}
+.accordion_one .accordion_header.open .i_box .one_i:before {
+  content: none;
+}
+.accordion_one .accordion_header.open .i_box .one_i:after {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.accordion_one .accordion_inner {
+  display: none;
+  padding: 30px 30px;
+  border-left: 2px solid #db0f2f;
+  border-right: 2px solid #db0f2f;
+  border-bottom: 2px solid #db0f2f;
+  box-sizing: border-box;
+}
+.accordion_one .accordion_inner .box_one {
+  height: 100%;
+}
+.accordion_one .accordion_inner iframe.txt_a_ac {
+  margin: 0;
+}
+@media screen and (max-width: 1024px) {
+  .accordion_one .accordion_header {
+    font-size: 18px;
+  }
+  .accordion_one .accordion_header .i_box {
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .accordion_one .accordion_header {
+    font-size: 16px;
+    text-align: left;
+    padding: 15px 60px 15px 15px;
+  }
+}
