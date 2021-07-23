@@ -1,9 +1,12 @@
-<%= form_tag("/user/#{@current_user.id}/update") do %>
-  <p>名前</p>
-  <input name="name" value="<%= @current_user.name %>">
-  <p>メールアドレス</p>
-  <input name="email" type="email" value="<%= @current_user.email %>">
-  <p>パスワード</p>
-  <input type="password" name="password" value="<%= @current_user.password %>">
-  <input type="submit" value="更新">
-<% end %>
+<div id="form">
+  <h2 class="form-title">登録情報の編集</h2>
+  <%= form_tag("/user/#{@current_user.id}/update") do %>
+    <p>ユーザ名</p>
+    <p class="name"><input type="name" name="name" value="<%= @current_user.name %>"></p>
+    <p>メールアドレス</p>
+    <p class="mail"><input name="email" type="email" value="<%= @current_user.email %>"></p>
+    <p>パスワード</p>
+    <p class="pass"><input type="password" name="password" value="<%= @current_user.password %>"></p>
+    <p class="submit"><input type="submit" value="更新"></p>
+  <% end %>
+</div>

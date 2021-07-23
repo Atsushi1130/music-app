@@ -1,7 +1,8 @@
 require 'itunes-search-api'
 
 class SearchController < ApplicationController
-  before_action :authenticate_user,{only:[:new,:delete]}
+  before_action :authenticate_user,{only:[:new,:delete,]}
+  before_action :forbid_login_user,{only:[:init]}
 
   def test
     @favoSong = Song.all
@@ -17,8 +18,13 @@ class SearchController < ApplicationController
     @term = params[:term]
     if @term == ""
       flash[:notice] = "検索ワードを入力してください"
-      redirect_to("/")
-      return
+      if @current_user
+        redirect_to("/user/#{@current_user.id}/show")
+        return
+      else
+        redirect_to("/")
+        return
+      end
     end
     @searchs = ITunesSearchAPI.search(
       :term => params[:term],
@@ -30,12 +36,8 @@ class SearchController < ApplicationController
   end
 
   def init
-    @favoSong = Song.all
-    @countArtist = Song.select(:artistName).distinct
-    @artistsAndSongs = {}
-    @countArtist.each do |artist|
-        @songs = Song.where(artistName: artist.artistName)
-        @artistsAndSongs.store(artist.artistName,@songs)
+    if @current_user
+      @countArtist = Song.where(user_id: @current_user.id).select(:artistName).distinct
     end
   end
 
@@ -69,6 +71,6 @@ class SearchController < ApplicationController
     @song = Song.find_by(trackId: params[:trackId])
     @song.destroy
     flash[:notice] = "削除が完了しました。"
-    redirect_to("/")
+    redirect_to("/user/#{@current_user.id}/show")
   end
 end

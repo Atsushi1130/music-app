@@ -14,3 +14,4 @@ ActiveStorage.start()
 
 require("jquery")
 require("user_show.js")
+require("application_page.js")

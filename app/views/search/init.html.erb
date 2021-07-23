@@ -1,3 +1,7 @@
-<% if @current_user %>
-  <h1><%= @current_user.name %>さんへのおすすめ</h1>
-<% end %>
+<div class="init">
+  <% if @current_user %>
+  <% else %>
+    <h1>好きな曲をお気に入り登録して、自分だけのリストを作成しましょう</h1>
+    <p>このアプリの説明</p>
+  <% end %>
+</div>

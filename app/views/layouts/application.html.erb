@@ -8,6 +8,10 @@
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <!-- コード追加　Bootstrap JavaScript読み込みコード-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
 
   <body>
@@ -23,20 +27,38 @@
           <input name = "term" type="text" size="25" placeholder="キーワード検索">
           <input type="submit" value='&#xf002'>
         <% end %>
-    </div>
-      <%= link_to("テストページへ","/test") %>
+      </div>
       <% if @current_user %>
-        <%= link_to("#{@current_user.name}さんへのおすすめ","/") %>
-        <%= link_to("お気に入り一覧へ","/user/#{@current_user.id}/show") %>
-        <%= link_to("登録情報の編集","/user/#{@current_user.id}/edit") %>
-        <%= link_to("ログアウト","/logout",{method: "post"}) %>
-        <p>ログイン中のユーザ：<%= @current_user.name %></p>
-      <% else %>
-        <%= link_to("アカウント作成","/signup") %>
-        <%= link_to("ログイン","/login_form") %>
+      <div class="menu-trigger" href="">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav class="nav-list">
+        <ul>
+          <li><%= link_to("お気に入り一覧へ","/user/#{@current_user.id}/show",{class: "li_list"}) %></li>
+          <li><%= link_to("登録情報の編集","/user/#{@current_user.id}/edit",{class: "li_list"}) %></li>
+          <li><%= link_to("ログアウト","/logout",{class: "li_list",method: "post"}) %></li>
+        </ul>
+      </nav>
+      <div class="overlay"></div>
       <% end %>
     </header>
-
-    <%= yield %>
+    <div class="contents">
+      <%= yield %>
+    </div>
+    <% if @current_user %>
+    <% else %>
+      <footer>
+        <div class="footer_container">
+          <% if @current_user %>
+          <% else %>
+            <span class="footer_des">あなただけのプレイリストを作成しましょう</span>
+            <%= link_to("アカウント作成","/signup",{class: "footer-button1"}) %>
+            <%= link_to("ログイン","/login_form",{class: "footer-button2"}) %>
+          <% end %>
+        </div>
+      </footer>
+    <% end %>
   </body>
 </html>

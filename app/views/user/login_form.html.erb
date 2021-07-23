@@ -1,11 +1,13 @@
-<h2>ログイン</h2>
-<% if @error_message %>
-  <%= @error_message %>
-<% end %>
-<%= form_tag("/login") do %>
-  <p>メールアドレス</p>
-  <input name="email" type="email" value="<%= @email %>">
-  <p>パスワード</p>
-  <input type="password" name="password" value="<%= @password %>">
-  <input type="submit" value="新規登録">
-<% end %>
+<div id="form">
+  <h2 class="form-title">Log in</h2>
+  <% if @error_message %>
+    <%= @error_message %>
+  <% end %>
+  <%= form_tag("/login") do %>
+    <p>メールアドレス</p>
+    <p class="mail"><input name="email" type="email" value="<%= @email %>"></p>
+    <p>パスワード</p>
+    <p class="pass"><input type="password" name="password" value="<%= @password %>"></p>
+    <p class="submit"><input type="submit" value="Log in"></p>
+  <% end %>
+</div>

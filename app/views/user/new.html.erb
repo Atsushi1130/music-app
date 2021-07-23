@@ -1,10 +1,12 @@
-<h2>新規作成</h2>
-<%= form_tag("/users/create") do %>
-  <p>ユーザ名</p>
-  <input name="name">
-  <p>メールアドレス</p>
-  <input name="email" type="email">
-  <p>パスワード</p>
-  <input name="password" type="password">
-  <input type="submit" value="新規登録">
-<% end %>
+<div id="form">
+  <h2 class="form-title">新規作成</h2>
+  <%= form_tag("/users/create") do %>
+    <p>ユーザ名</p>
+    <p class="name"><input type="name" name="name"></p>
+    <p>メールアドレス</p>
+    <p class="mail"><input name="email" type="email"></p>
+    <p>パスワード</p>
+    <p class="pass"><input name="password" type="password"></p>
+    <p class="submit"><input type="submit" value="新規登録"></p>
+  <% end %>
+</div>
