@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'user/new'
+  root "search#init"
   # searchコントローラ
   get "/test" => "search#test"
   get '/search' => "search#search"

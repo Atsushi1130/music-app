@@ -3,6 +3,7 @@ class UserController < ApplicationController
   before_action :ensure_correct_user,{only:[:show,:edit,:update]}
 
   def new
+    @user = User.new
   end
 
   def create
@@ -14,7 +15,9 @@ class UserController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:notice] = "ユーザ登録が完了しました。"
-      redirect_to("/")
+      redirect_to("/user/#{@user.id}/show")
+    else
+      render("user/new.html.erb")
     end
   end
 
@@ -58,6 +61,7 @@ class UserController < ApplicationController
   end
 
   def edit
+    @user = User.find_by(id: params[:id])
   end
 
   def update
@@ -67,6 +71,9 @@ class UserController < ApplicationController
     @user.password = params[:password]
     if @user.save
       redirect_to("/user/#{@user.id}/show")
+    else
+      render("user/edit.html.erb")
     end
   end
+
 end

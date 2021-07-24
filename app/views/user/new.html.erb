@@ -1,6 +1,9 @@
 <div id="form">
   <h2 class="form-title">新規作成</h2>
   <%= form_tag("/users/create") do %>
+    <% @user.errors.full_messages.each do |message| %>
+      <%= message %>
+    <% end %>
     <p>ユーザ名</p>
     <p class="name"><input type="name" name="name"></p>
     <p>メールアドレス</p>

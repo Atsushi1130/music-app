@@ -6,7 +6,13 @@
 .init h1{
   text-align: center;
 }
-
+.init p{
+  text-align: center;
+  font-size: 20px;
+}
+.init .app-describe{
+  margin-top: 50px;
+}
 /*search.html.erb*/
 /*ページネーション自体のデザイン*/
 .pagination>li>a {

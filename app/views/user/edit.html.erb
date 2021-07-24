@@ -1,6 +1,9 @@
 <div id="form">
   <h2 class="form-title">登録情報の編集</h2>
   <%= form_tag("/user/#{@current_user.id}/update") do %>
+    <% @user.errors.full_messages.each do |message| %>
+      <%= message %>
+    <% end %>
     <p>ユーザ名</p>
     <p class="name"><input type="name" name="name" value="<%= @current_user.name %>"></p>
     <p>メールアドレス</p>

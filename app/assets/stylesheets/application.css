@@ -113,9 +113,13 @@
 .flashNotice{
   text-align: center;
   background-color: orange;
-  opacity: 0.8;
+  opacity: 0.7;
 }
-
+.flash{
+  margin-top:0px;
+  padding: 30px 0;
+  font-size: 24px;
+}
 .search_container{
   background-color: white;
   box-sizing: border-box;
