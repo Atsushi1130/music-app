@@ -44,9 +44,21 @@ class SearchController < ApplicationController
   def new
     trackId = params[:trackId]
     collectionId = params[:collectionId]
-    artistName = params[:artistName]
-    collectionName = params[:collectionName]
-    trackName = params[:trackName]
+    if params[:artistName].include? "11112222"
+      artistName = params[:artistName].gsub!("11112222",".")
+    else
+      artistName = params[:artistName]
+    end
+    if params[:collectionName].include? "11112222"
+      collectionName = params[:collectionName].gsub!("11112222",".")
+    else
+      collectionName = params[:collectionName]
+    end
+    if params[:trackName].include? "11112222"
+      trackName = params[:trackName].gsub!("11112222",".")
+    else
+      trackName = params[:trackName]
+    end
     userId = @current_user.id
     if Song.where(user_id: @current_user.id).find_by(trackId: trackId)
       flash[:notice] = "「"+trackName+"」"+"は既にお気に入り登録されています。"
