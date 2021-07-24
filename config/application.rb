@@ -11,7 +11,7 @@ module RailsMusicApp
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
     config.i18n.default_locale = :ja
-    config.assets.js_compressor = :uglifier
+    config.assets.js_compressor = Uglifier.new(harmony: true)
     config.assets.initialize_on_precompile = false
 
 
