@@ -132,7 +132,7 @@
   width: 260px;
   margin: 0px auto;
   margin-bottom: 20px;
-  height: 40%;
+  height: 2.7em;
 }
 .search_container input[type="text"]{
   border: none;
@@ -152,6 +152,8 @@
   outline : none;
   width: 2.0em;
   height: 2.0em;
+  position: absolute;
+  right: 7%;
 }
 
 header{
@@ -238,4 +240,53 @@ footer{
   width: 50%;
   height: 30%;
   margin: auto 0;
+}
+
+
+/* メディアクエリ */
+
+/* iPad以下 */
+@media screen and (max-width: 768px){
+  .footer_container{
+    position: relative;
+  }
+  .footer_des{
+    display: none;
+  }
+  .footer-button1{
+    position:absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 35%;
+    height: 50%;
+    right: 40%;
+  }
+  .footer-button2{
+    position:absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 35%;
+    height: 50%;
+    left: 40%;
+  }
+  header h1{
+    font-size: 30px;
+  }
+  .flash{
+    font-size:30px;
+  }
+}
+
+/* iPhone X*/
+@media screen and (max-width: 376px){
+  .flash{
+    font-size:14px;
+  }
+  header h1{
+    font-size: 14px;
+  }
 }
